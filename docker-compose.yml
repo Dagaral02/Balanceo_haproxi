@@ -15,15 +15,7 @@ services:
       expose:
         - 80
       container_name: apache2
-      
-   apache3:
-      build:
-       context: ./
-       dockerfile: Dockerfile-Apache3
-      expose:
-        - 80
-      container_name: apache3   
-  
+   
    haproxy:
       image: haproxytech/haproxy-alpine:2.4
       volumes:
@@ -35,5 +27,3 @@ services:
       depends_on:
          - apache1
          - apache2
-         - apache3
-
